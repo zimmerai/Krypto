@@ -14,6 +14,8 @@ public class Main {
                     count++;
                 }
             }
+            if (count != 0) 
+                System.out.println("Häufigkeit von " + letter + ": " + (double) count/msg.length()*100 + "%");
             letterCount.add((count));
         }
         for (int num: letterCount) {
@@ -23,8 +25,9 @@ public class Main {
         return koinzidenzIndex;
     }
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        Scanner inputScanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Geben sie ihren Text ein: ");
-        System.out.println(koinzidenz(myObj.nextLine()));
+        System.out.println("Kooinzidenz Index: " + koinzidenz(inputScanner.nextLine()));
+        inputScanner.close();
     }
 }

@@ -6,8 +6,10 @@ def koinzidenz(msg: str):
         if char in alpabet: 
             letterCount[char] += 1
     for letter in letterCount:
+        if (letterCount[letter] != 0):
+            print("Häufigkeit von " + letter + ": " + str(letterCount[letter]/len(msg)*100) + "%")
         koinzidenzIndex += (letterCount[letter]/len(msg))**2
     return koinzidenzIndex
 
 input = input("Gebe deinen Satz ein:")
-print(koinzidenz(input))
+print("Kooinzidenz Index: " + str(koinzidenz(input)))
